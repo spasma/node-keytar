@@ -2,6 +2,17 @@
 // Adapted from DefinitelyTyped: https://github.com/DefinitelyTyped/DefinitelyTyped/blob/master/types/keytar/index.d.ts
 
 /**
+ * Set the .node instance with a custom compiled instance
+ *
+ * example:
+ * keytar = require('keytar');
+ * keytar.setKeytarInstance(require('./custom-keytar-build.node'));
+ *
+ * @param instance .node File.
+ */
+export declare function setKeytarInstance(instance: any):null;
+
+/**
  * Get the stored password for the service and account.
  *
  * @param service The string service name.
@@ -48,4 +59,4 @@ export declare function findPassword(service: string): Promise<string | null>;
  *
  * @returns A promise for the array of found credentials.
  */
-export declare function findCredentials(service: string): Promise<Array<{ account: string, password: string}>>;
+export declare function findCredentials(service: string): Promise<{ account: string, password: string}>;
